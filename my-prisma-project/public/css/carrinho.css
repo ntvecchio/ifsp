@@ -1,0 +1,139 @@
+.estrela svg {
+    width: 16px;
+    height: 16px;
+}
+
+.uitk-layout-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.uitk-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #00cc66;
+    color: #fff;
+}
+
+.uitk-heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.comodidades {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containers {
+    display: flex;
+    gap: 20px; /* Espaçamento entre o h4 e o parágrafo */
+    flex-wrap: wrap; /* Para lidar com a responsividade */
+}
+
+h4 {
+    flex: 0 0 auto; /* Impede que o h4 cresça com o tamanho do container */
+}
+
+.text-aside {
+    flex: 1 1 70%; /* O parágrafo ocupa o espaço restante, com 70% do container */
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 20px; /* Espaçamento entre os elementos */
+    flex-wrap: wrap; /* Para lidar com a responsividade */
+}
+
+h4 {
+    flex: 0 0 auto; /* Impede que o h4 cresça com o tamanho do container */
+}
+
+.fs-5 {
+    flex: 1 1 70%; /* O item de destaque ocupa o espaço restante */
+}
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
+
+
+
+
+    /* Estilos personalizados para os botões do carrossel */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px; /* Largura dos botões */
+        height: 50px; /* Altura dos botões */
+        background-color: rgba(24, 0, 0, 0.5); /* Cor de fundo */
+        border-radius: 50%; /* Forma arredondada */
+        border: none; /* Remover a borda */
+        font-size: 24px; /* Tamanho da fonte */
+        color: rgb(255, 255, 255); /* Cor do ícone */
+        top: 50%; /* Posicionamento vertical */
+        transform: translateY(-50%); /* Ajuste fino de posicionamento */
+    }
+
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    flex-direction: row;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.modal-image {
+    width: 50%;
+}
+
+.modal-image img {
+    width: 100%;
+}
+
+.modal-info {
+    width: 50%;
+    padding-left: 20px;
+}

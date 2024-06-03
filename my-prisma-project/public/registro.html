@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro </title>
+    <link rel="shortcut icon" href="/img/Logotipo.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #3c3c3c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select, input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 11px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        input[type="submit"]:hover {
+            background-color: #ffffff;
+        }
+        h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: white;
+        }
+        ::placeholder {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/registro" method="post">
+    <h2>Formulário de Registro</h2>
+    <label for="nome">Nome completo:</label>
+    <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario" required placeholder="Seu usuário">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Seu email">
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required placeholder="Sua senha">
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" required placeholder="Seu telefone">
+
+    <label for="nascimento">Data de Nascimento:</label>
+    <input type="date" id="nascimento" name="nascimento" required>
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo" required>
+        <option value="" disabled selected>Selecione seu sexo</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+    </select>
+
+    <input type="submit" value="Registrar">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,938 @@
+html, body {
+  background: #fdfdfd;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-brown {
+  background-color: darkgray  !important;
+}
+
+main{
+  flex: 1;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: none;
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.login-button {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent; /* Cor de fundo azul */
+  color: #000000; /* Cor do texto */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s; /* Suaviza a transição da cor de fundo */
+}
+
+.login-button:hover {
+  background-color: #057521; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.login-button span {
+  display: block;
+  position: relative;
+  z-index: 1; /* Garante que o texto fique acima da ondulação */
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  background-color: #10640580; /* Cor da ondulação */
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+.button span {
+  z-index: 1;
+}
+.img-resize {
+  width: 200px; /* Define a largura para 200px */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Ajusta a imagem para cobrir o espaço definido, útil se você também definir uma altura */
+}
+
+
+.button::before {
+  content: '';
+  background-color: #fe6600;
+  width: 300%;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  z-index: 0;
+}
+.navbar-brand {
+  transition: all 1s ease; /* Suaviza a transição da borda e outras propriedades */
+  border: 2px solid transparent; /* Define uma borda transparente para manter o layout consistente */
+  padding: 5px; /* Adiciona um pouco de espaço ao redor do texto */
+}
+
+.navbar-brand:hover {
+  border-color: #ffffff; /* Muda a cor da borda para branco ao passar o mouse */
+}
+.nav-link.button {
+  position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+  display: inline-block; /* Permite o dimensionamento correto */
+  overflow: hidden; /* Mantém o pseudo-elemento dentro dos limites do link */
+}
+.nav-link.button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Inicia sem largura */
+  height: 2px; /* Altura da barrinha */
+  background-color: #ffffff; /* Cor da barrinha */
+  transition: width 0.5s ease; /* Transição suave ao carregar */
+}
+
+.nav-link.button:hover::after {
+  width: 100%; /* A barrinha carrega completamente */
+  animation: pulsate 1s infinite; /* Começa a pulsar após carregar */
+}
+
+@keyframes pulsate {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+footer {
+  font-family: Arial, sans-serif;
+  background-color: grey;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+
+.top{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-details, .media-icons, .link-boxes, .input-box {
+  margin-bottom: 20px;
+}
+
+.media-icons {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.media-icons a {
+  color: #fff;
+  margin: 0 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.media-icons a:hover {
+  transform: scale(1.2);
+}
+
+.link-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.box {
+  list-style-type: none;
+}
+
+.box li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding-left: 10px;
+  transition: color 0.3s;
+}
+
+.box li a:hover {
+  color: #ddd;
+}
+
+.box li a::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.5s ease;
+  animation: pulseAnimation 1.5s infinite;
+}
+
+.box li a:hover::before {
+  width: 100%;
+}
+
+.input-box {
+  align-self: flex-start;
+  margin-left: auto; /* This ensures the map is on the extreme right */
+  width: 300px; /* Adjust the width of the map */
+}
+
+.bottom-details {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Keyframes for the pulsing effect */
+@keyframes pulseAnimation {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+.input-box input[type="text"], .input-box input[type="button"] {
+  width: 100%; /* Garante que o input e o botão preencham a largura da coluna */
+  padding: 10px;
+  margin-bottom: 10px; /* Adiciona espaço entre o input e o botão */
+}
+
+.input-box input[type="button"] {
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+}
+
+.bottom-details {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .link-boxes {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .box, .input-box {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #201f1f;
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+.navbar .logo a {
+  color: #e9e3e3;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar .nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar .nav ul li {
+  padding: 0 10px;
+}
+
+.navbar .nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.highlight {
+  background-color: #556;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menu {
+  display: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  background-color: #333;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-menu ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .nav {
+      display: none;
+  }
+  
+  .menu {
+      display: block;
+  }
+  
+  .dropdown-menu {
+      display: none;
+  }
+}
+
+
+#minhaDiv {
+  background-color: #007980;
+  padding: 40px;
+}
+
+
+/* daqui para baixo é do carrinho */
+
+.cart-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-item img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.btn-comprar, .btn-quantidade {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-comprar {
+  background-color: #4caf50;
+}
+
+.btn-comprar:hover {
+  background-color: #45a049;
+}
+
+.btn-quantidade {
+  background-color: #007bff;
+}
+
+.btn-quantidade:hover {
+  background-color: #0056b3;
+}
+
+.total {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+/* daqui para baixo é do carrinho */
+
+.cart-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-item img {
+  max-width: 100%;
+  height: 200px;
+}
+
+.btn-comprar, .btn-quantidade {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-comprar {
+  background-color: #4caf50;
+}
+
+.btn-comprar:hover {
+  background-color: #45a049;
+}
+
+.btn-quantidade {
+  background-color: #007bff;
+}
+
+.btn-quantidade:hover {
+  background-color: #0056b3;
+}
+
+.total {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+footer {
+  font-family: Arial, sans-serif;
+  background-color: grey;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.bottom-details {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .link-boxes {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .box, .input-box {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.button {
+padding: 10px 20px;
+background-color: none;
+color: #ffffff;
+border-radius: 50px;
+text-decoration: none;
+position: relative;
+overflow: hidden;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+cursor: pointer;
+}
+
+.ripple {
+position: absolute;
+border-radius: 50%;
+transform: scale(0);
+animation: ripple-effect 0.6s linear;
+background-color: #10640580; /* Cor da ondulação */
+}
+
+@keyframes ripple-effect {
+to {
+  transform: scale(4);
+  opacity: 0;
+}
+}
+
+
+.button span {
+z-index: 1;
+}
+
+.button::before {
+content: '';
+background-color: #fe6600;
+width: 300%;
+height: 300%;
+position: absolute;
+top: 50%;
+left: 50%;
+border-radius: 50%;
+transform: translate(-50%, -50%) scale(0);
+transition: transform 0.5s ease;
+transform-origin: center;
+z-index: 0;
+}
+
+.nav-link.button::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0; /* Inicia sem largura */
+height: 2px; /* Altura da barrinha */
+background-color: #ffffff; /* Cor da barrinha */
+transition: width 0.5s ease; /* Transição suave ao carregar */
+}
+
+.nav-link.button:hover::after {
+width: 100%; /* A barrinha carrega completamente */
+animation: pulsate 1s infinite; /* Começa a pulsar após carregar */
+}
+
+@keyframes pulsate {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.5;
+}
+100% {
+    opacity: 1;
+}
+}
+
+.content {
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 1200px;
+margin: auto;
+padding: 0 20px;
+}
+
+
+.top{
+width: 100%;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.logo-details, .media-icons, .link-boxes, .input-box {
+margin-bottom: 20px;
+}
+
+.media-icons {
+justify-content: center;
+display: flex;
+margin-bottom: 40px;
+}
+
+.media-icons a {
+color: #fff;
+margin: 0 10px;
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.media-icons a:hover {
+transform: scale(1.2);
+}
+
+.link-boxes {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+flex: 1;
+gap: 30px;
+margin-bottom: 20px;
+}
+
+.box {
+list-style-type: none;
+}
+
+.box li a {
+color: #fff;
+text-decoration: none;
+position: relative;
+padding-left: 10px;
+transition: color 0.3s;
+}
+
+.box li a:hover {
+color: #ddd;
+}
+
+.box li a::before {
+content: '';
+position: absolute;
+bottom: -3px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: #fff;
+transition: width 0.5s ease;
+animation: pulseAnimation 1.5s infinite;
+}
+
+.box li a:hover::before {
+width: 100%;
+}
+
+.input-box {
+align-self: flex-start;
+margin-left: auto; /* This ensures the map is on the extreme right */
+width: 300px; /* Adjust the width of the map */
+}
+
+.bottom-details {
+width: 100%;
+text-align: center;
+margin-top: 20px;
+}
+
+/* Keyframes for the pulsing effect */
+@keyframes pulseAnimation {
+0% {
+    opacity: 1;
+}
+50% {
+    opacity: 0.5;
+}
+100% {
+    opacity: 1;
+}
+}
+
+
+.input-box input[type="text"], .input-box input[type="button"] {
+width: 100%; /* Garante que o input e o botão preencham a largura da coluna */
+padding: 10px;
+margin-bottom: 10px; /* Adiciona espaço entre o input e o botão */
+}
+
+.input-box input[type="button"] {
+cursor: pointer;
+border: none;
+background-color: #007bff;
+color: white;
+}
+
+.bottom-details {
+margin-top: 20px;
+text-align: center;
+}
+
+@media (max-width: 768px) {
+.link-boxes {
+    flex-direction: column;
+    align-items: center;
+}
+
+.box, .input-box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+}
+
+body, html {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #201f1f;
+color: #ffffff;
+padding: 10px 20px;
+}
+
+.navbar .logo a {
+color: #e9e3e3;
+text-decoration: none;
+font-size: 20px;
+}
+
+.navbar .nav ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+}
+
+.navbar .nav ul li {
+padding: 0 10px;
+}
+
+.navbar .nav ul li a {
+color: white;
+text-decoration: none;
+}
+
+.highlight {
+background-color: #556;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.menu {
+display: none;
+cursor: pointer;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+right: 20px;
+top: 60px;
+background-color: #333;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-menu ul {
+list-style-type: none;
+padding: 0;
+}
+
+.dropdown-menu ul li a {
+padding: 10px 20px;
+display: block;
+color: white;
+text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+.navbar .nav {
+    display: none;
+}
+
+.menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+}
+}
+
+
+#minhaDiv {
+background-color: #007980;
+padding: 40px;
+}
+
+.link-boxes {
+  flex: 1;
+}
+
+.media-icons {
+  text-align: center;
+}
+
+.bottom-details {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.policy_terms a {
+  margin-left: 10px;
+  position: relative;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.policy_terms a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 3.5s ease;
+}
+
+.policy_terms a:hover::before {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #footer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .link-boxes {
+      margin-top: 20px;
+  }
+
+  .bottom-details {
+      justify-content: center;
+      margin-top: 20px;
+  }
+
+}
